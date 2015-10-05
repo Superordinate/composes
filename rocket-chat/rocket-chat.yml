@@ -1,0 +1,14 @@
+rocketchat:
+  image: rocketchat/rocket.chat
+  environment:
+    - MONGO_URL=mongodb://mongodb/rocketchat
+    - ROOT_URL=http://0.0.0.0:80
+  links:
+    - mongodb
+  ports:
+    - 80:80
+
+mongodb:
+   image: mongo
+   ports:
+     - 27017
